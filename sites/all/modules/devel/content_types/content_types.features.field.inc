@@ -513,60 +513,6 @@ Provide if available',
     ),
   );
 
-  // Exported field: 'node-journal-field_haspart'.
-  $fields['node-journal-field_haspart'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_haspart',
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'relation_dummy_field',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'relation',
-    ),
-    'field_instance' => array(
-      'bundle' => 'journal',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'relation_dummy_field',
-          'settings' => array(),
-          'type' => 'relation_default',
-          'weight' => '1',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_haspart',
-      'label' => 'Articles Published',
-      'required' => 0,
-      'settings' => array(
-        'relation_type' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'relation_dummy_field',
-        'settings' => array(),
-        'type' => 'relation_default',
-        'weight' => '3',
-      ),
-    ),
-  );
-
   // Exported field: 'node-journal-field_issn'.
   $fields['node-journal-field_issn'] = array(
     'field_config' => array(
@@ -1664,106 +1610,9 @@ This is the print ISSN',
     ),
   );
 
-  // Exported field: 'node-pointer-field_points_to'.
-  $fields['node-pointer-field_points_to'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_points_to',
-      'foreign keys' => array(
-        'node' => array(
-          'columns' => array(
-            'target_id' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
-      'indexes' => array(
-        'target_id' => array(
-          0 => 'target_id',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'entityreference',
-      'settings' => array(
-        'handler' => 'base',
-        'handler_settings' => array(
-          'behaviors' => array(
-            'views-select-list' => array(
-              'status' => 0,
-            ),
-          ),
-          'sort' => array(
-            'direction' => 'ASC',
-            'field' => 'body:value',
-            'property' => 'nid',
-            'type' => 'none',
-          ),
-          'target_bundles' => array(
-            'author_page' => 'author_page',
-            'biblio' => 'biblio',
-            'book' => 'book',
-            'image' => 'image',
-            'journal' => 'journal',
-            'journal_article' => 'journal_article',
-            'person_page' => 'person_page',
-          ),
-        ),
-        'handler_submit' => 'Change handler',
-        'target_type' => 'node',
-      ),
-      'translatable' => '0',
-      'type' => 'entityreference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'pointer',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'entityreference',
-          'settings' => array(
-            'link' => FALSE,
-          ),
-          'type' => 'entityreference_label',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_points_to',
-      'label' => 'Points To',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'entityreference',
-        'settings' => array(
-          'match_operator' => 'CONTAINS',
-          'path' => '',
-          'size' => '60',
-        ),
-        'type' => 'entityreference_autocomplete',
-        'weight' => '31',
-      ),
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Articles');
-  t('Articles Published');
   t('Biographical Information');
   t('Birth');
   t('Body');
@@ -1786,7 +1635,6 @@ This is the print ISSN');
   t('Journal');
   t('Last page of the article.');
   t('Link to journal\'s online presence, if available.');
-  t('Points To');
   t('Publisher');
   t('Start Page');
   t('Subject Headings');

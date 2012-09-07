@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Apache Solr with Config feature.
+ */
+
+include_once 'apache_solr_with_config.features.inc';
