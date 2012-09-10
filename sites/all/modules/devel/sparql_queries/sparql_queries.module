@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the SPARQL Queries feature.
- */
-
-include_once 'sparql_queries.features.inc';
