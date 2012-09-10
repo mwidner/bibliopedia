@@ -4,14 +4,13 @@ package = Services
 core = 7.x
 php = 5.x
 
-; This module for tests only.
-hidden = TRUE
+files[] = services_test_resource.module
 
 dependencies[] = services
 
-; Information added by drupal.org packaging script on 2012-08-14
-version = "7.x-3.1+72-dev"
+; Information added by drupal.org packaging script on 2011-11-16
+version = "7.x-3.1"
 core = "7.x"
 project = "services"
-datestamp = "1344949466"
+datestamp = "1321482643"
 
