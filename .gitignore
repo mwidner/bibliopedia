@@ -1,6 +1,25 @@
+<<<<<<< HEAD
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
 
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+=======
+[Oo]bj
+[Bb]in
+*.user
+*.suo
+*.[Cc]ache
+*.bak
+*.ncb
+*.log 
+*.DS_Store
+[Tt]humbs.db 
+_ReSharper.*
+*.resharper
+Ankh.NoLoad
+*.svn
+TestResults
+/Development/StaticSite/DiyPinkFloyd/DiyPinkFloyd.Publish.xml
+>>>>>>> 56a29092505f74be00272c8aa50f8cd18727fb50
