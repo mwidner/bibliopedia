@@ -1,0 +1,12 @@
+name = RDF Mappings
+core = 7.x
+package = Bibliopedia
+version = 7.x-1.0-beta1
+project = rdf_mappings
+dependencies[] = rdf
+dependencies[] = rdfx
+features[features_api][] = api:1
+features[rdf_mappings][] = node-author_page
+features[rdf_mappings][] = node-journal
+features[rdf_mappings][] = node-journal_article
+features[rdf_mappings][] = node-person_page
