@@ -1,0 +1,12 @@
+name = User Roles
+description = Roles and permissions for different user categories
+core = 7.x
+package = Bibliopedia
+version = 7.x-1.0-beta1
+project = user_roles
+dependencies[] = features
+features[features_api][] = api:1
+features[user_role][] = administrator
+features[user_role][] = bots
+features[user_role][] = contributor
+features[user_role][] = editor
