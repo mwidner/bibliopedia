@@ -1,0 +1,11 @@
+name = Text Formats
+description = WYSIWYG and Text Formats
+core = 7.x
+package = Bibliopedia
+version = 7.x-1.0-beta1
+project = text_formats
+dependencies[] = features
+dependencies[] = wysiwyg
+features[features_api][] = api:1
+features[filter][] = filtered_html
+features[filter][] = full_html
