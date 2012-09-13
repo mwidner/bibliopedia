@@ -1,0 +1,73 @@
+diff --git a/handlers/sparql_views_handler_argument_subject.inc b/handlers/sparql_views_handler_argument_subject.inc
+new file mode 100644
+index 0000000..64e10f4
+--- /dev/null
++++ b/handlers/sparql_views_handler_argument_subject.inc
+@@ -0,0 +1,40 @@
++<?php
++/**
++ * SPARQL Views arguments.
++ *
++ * The argument enables re-writing the argument. For instance, if someone goes
++ * to http://example.org/Pittsburgh, this argument could be rewritten to
++ * http://dbpedia.org/resource/Pittsburgh.
++ */
++class sparql_views_handler_argument_subject extends sparql_views_handler_argument {
++  //@todo This should never be a number. Remove that as an option.  
++
++  /**
++   * Set up the query for this argument.
++   *
++   * The argument sent may be found at $this->argument.
++   */
++  function query() {
++    ob_start();
++    $return = eval($this->options['sparql_options']['code']);
++    ob_end_clean();
++
++    $replacement = !empty($return) ? $return : $this->argument;
++    $relationship = $this->options['relationship'];
++
++    if ($relationship == 'none') {
++      $subject = $this->definition['subject'];
++    }
++    else {
++      $subject = $relationship;
++    }
++
++    if (!empty($replacement)) {
++      $value_type = $this->options['sparql_options']['value_type'];
++      $language = $this->options['sparql_options']['language'];
++      $object = $this->query->format_replacement($replacement, $value_type, $language);
++
++      $this->query->add_filter('=', array('?' . $subject, $object));
++    }
++  }
++}
+\ No newline at end of file
+diff --git a/sparql_views.info b/sparql_views.info
+index e722674..ac3ae72 100644
+--- a/sparql_views.info
++++ b/sparql_views.info
+@@ -11,6 +11,7 @@ files[] = sparql_views.admin.inc
+ files[] = sparql_views.views.inc
+ files[] = includes/sparql_views.controller.inc
+ files[] = handlers/sparql_views_handler_argument.inc
++files[] = handlers/sparql_views_handler_argument_subject.inc
+ files[] = handlers/sparql_views_handler_field.inc
+ files[] = handlers/sparql_views_handler_field_rdftype.inc
+ files[] = handlers/sparql_views_handler_field_subject.inc
+diff --git a/sparql_views.views.inc b/sparql_views.views.inc
+index 53fc416..c5c8adc 100644
+--- a/sparql_views.views.inc
++++ b/sparql_views.views.inc
+@@ -66,7 +66,8 @@ function sparql_views_views_data_alter(&$data) {
+           'group' => t($group),
+           'base' => $endpoint->table_id,
+           'base field' => $bundle_type,
+-          'handler' => 'sparql_views_handler_argument',
++          'handler' => 'sparql_views_handler_argument_subject',
++          'subject' => $bundle_type,
+           'label' => t($bundle_type),
+         ),
+       );
