@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the RDF Mappings feature.
- */
-
-include_once 'rdf_mappings.features.inc';
